@@ -80,3 +80,16 @@ class TitleSection extends StatelessWidget {
     );
   }
 }
+
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final Color color = Theme.of(context).primaryColor;
+    return Text(
+      'テキスト',
+      style: TextStyle(color: color),
+    );
+  }
+}
