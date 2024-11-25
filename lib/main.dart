@@ -14,9 +14,15 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: TitleSection(
-          name: 'テストです',
-          location: 'テストです',
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              TitleSection(
+            name: 'テストです',
+            location: 'テストです',
+          ),
+            ],
+          )
         ),
       ),
     );
