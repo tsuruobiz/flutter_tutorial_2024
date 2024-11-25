@@ -15,9 +15,22 @@ class MyApp extends StatelessWidget {
           title: const Text(appTitle),
         ),
         body: const Center(
-          child: Text('Hello World'),
+          child: TitleSection(
+            name: 'テストです',
+          ),
         ),
       ),
     );
+  }
+}
+
+class TitleSection extends StatelessWidget {
+  const TitleSection({super.key, required this.name});
+
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(name);
   }
 }
