@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
+// Flutterのレイアウト構築の方法をを学ぶためのサンプルアプリです。
+// Flutter公式ドキュメントのBuilding layoutsに沿った実装を行っています。
+// ref. https://docs.flutter.dev/ui/layout/tutorial#step-3-implement-the-button-row
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,12 +17,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             children: [
               ImageSection(
                 image: 'images/lake.jpg',
               ),
+              // テキストやスターアイコンを横に並べた塊をTitleSectionという塊で表現します。
+              // buildメソッドの中にこのように記述します。Container配下に複雑なWidgetがネストされていますが、
+              // それらを`titleSection`という変数に代入しているのがこちらの記述です。
+              // このように記述することで、buildメソッドの中身がすっきりと見やすくなります。
+              // ref. https://docs.flutter.dev/ui/layout/tutorial#add-the-title-section
               TitleSection(
                 name: 'Oeschinen Lake Campground',
                 location: 'Kandersteg, Switzerland',
